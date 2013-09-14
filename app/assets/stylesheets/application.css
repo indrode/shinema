@@ -1,0 +1,62 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+
+body {
+  color: #111;
+  background-color: #e6e6e6;
+  font-family: Helvetica, Arial, sans-serif;
+  margin:0;
+  padding:0;
+}
+
+#intro {
+  background-image:url('/assets/diagmonds.png');
+  height:100px;
+  border-bottom:1px solid #555;
+  box-shadow: 3px 3px 3px #000;
+}
+
+h1 {
+  font-family: 'Geo', sans-serif;
+  text-transform:uppercase;
+  font-size:60px;
+  text-shadow: 3px 3px 3px rgba(255, 255, 255, 1);
+}
+
+i.icon {
+  padding:0 8px 0 4px;
+}
+
+i.icon.icon-frown { color: #aa0000; }
+i.icon.icon-smile { color: #006400; }
+
+table {
+  width:100%;
+  border-collapse: collapse;
+}
+
+tr.even {
+  background-color: #fff;
+}
+
+tr.odd {
+  background-color: #f0f0f0;
+}
+
+td {
+  border:2px solid #989898;
+  padding:10px;
+  margin:0;
+}

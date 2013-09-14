@@ -1,0 +1,26 @@
+
+
+
+= form_for @movie do |f|
+  - if @movie.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@movie.errors.count, "error")} prohibited this movie from being saved:"
+      %ul
+        - @movie.errors.full_messages.each do |msg|
+          %li= msg
+
+  .autocomplete-search
+    = f.autocomplete_field :display_title, autocomplete_movie_meta_title_movies_path, :update_elements => {:id => '#movie_meta_id', :title => "#movie_title", :year => '#movie_year'}, :placeholder => "search and add a movie..."
+
+  .field
+    = f.hidden_field :meta_id
+    = f.label :title
+    = f.text_field :title, :readonly => true, :tabindex => '200'
+    = f.label :year
+    = f.text_field :year, :readonly => true, :tabindex => '201'
+    = f.label :rating
+    = f.text_field :rating
+    = f.submit 'Save'
+
+%p
+  Holla!

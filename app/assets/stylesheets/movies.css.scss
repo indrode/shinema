@@ -1,0 +1,34 @@
+// Place all the styles related to the movies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+td.title, th.title {
+  width:65%;
+}
+
+td.rating, th.rating {
+  width:15%;
+  text-align:center;
+  color: #DAA520;
+  /*text-shadow: 1px 1px 1px #555;*/
+}
+
+td.rating span {
+  font-size:0.9em;
+  color: #000;
+}
+
+td.actions, th.actions {
+  width:20%;
+  text-align:center
+}
+
+.field, .autocomplete-search {
+  text-align:center;
+}
+input#movie_display_title {
+  padding:15px;
+  font-size:2em;
+  width: 70%;
+  margin:20px;
+}
