@@ -5,6 +5,14 @@ GIT
     rails3-jquery-autocomplete (1.0.11)
       rails (>= 3.0)
 
+GIT
+  remote: https://github.com/indrode/kotae.git
+  revision: 8977f1ae21a870a30cda7e185b305545ddbcb3c5
+  branch: shinema
+  specs:
+    kotae (0.1.0)
+      dotenv (~> 0.8.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -51,6 +59,7 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     diff-lcs (1.2.4)
+    dotenv (0.8.0)
     erubis (2.7.0)
     execjs (2.0.1)
     ffi (1.9.0)
@@ -166,6 +175,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   kaminari
+  kotae!
   mysql2
   rails (= 4.0.0)
   rails3-jquery-autocomplete!
