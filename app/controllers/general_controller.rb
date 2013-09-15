@@ -7,7 +7,7 @@ class GeneralController < ApplicationController
 
   def deauthenticate
     session[:shinema_user_token] = nil
-    render :text => "Deauthenticated."
+    render :text => "De-authenticated."
   end
 
 
