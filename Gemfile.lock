@@ -14,8 +14,8 @@ GIT
 
 GIT
   remote: https://github.com/indrode/kotae.git
-  revision: 8977f1ae21a870a30cda7e185b305545ddbcb3c5
-  branch: shinema
+  revision: 739db65b320a50c6d9afc083ceecf03e28a20047
+  ref: shinema
   specs:
     kotae (0.1.0)
       dotenv (~> 0.8.0)
