@@ -10,7 +10,7 @@ class MoviesController < ApplicationController
     order = order ? "#{order} #{desc}, title asc" : "title"
 
     @desc = desc == "DESC" ? "ASC" : "DESC"
-    @movies = Movie.order(order).page(params[:page])
+    @movies = Movie.order(order)#.page(params[:page])
     @movie = Movie.new
   end
 

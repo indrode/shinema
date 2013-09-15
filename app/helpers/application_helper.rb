@@ -43,4 +43,12 @@ module ApplicationHelper
     '<i class="icon-star" />'
   end
 
+  def edit_icon
+    '<i class="icon-edit" />'
+  end
+
+  def delete_icon
+    '<i class="icon-star" />'
+  end
+
 end

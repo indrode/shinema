@@ -13,12 +13,13 @@
 <body>
 
 <div id="intro">
-
-
+  <div style="margin:0 auto; width: 960px; padding-top:75px;">
+    <h1 style="float:left;"><%= link_to("シネマ shinema", root_path) %> <span><%= @movie_count %> movies rated</span></h1>
+    <h1 style="float:right;">indro.de@gmail.com &nbsp;|&nbsp; logout</h1>
+  </div>
 </div>
 
 <div style="margin:0 auto; width: 960px;">
-  <h1>シネマ shinema</h1>
   <%= yield %>
 </div>
 </body>

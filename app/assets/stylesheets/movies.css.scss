@@ -2,6 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#the-form {
+  padding:50px 0;
+}
+
+table#movies {
+  border-top: 20px solid #e6e6e6;
+  margin: 0;
+}
+
 td.title, th.title {
   width:65%;
 }
@@ -20,15 +29,30 @@ td.rating span {
 
 td.actions, th.actions {
   width:20%;
-  text-align:center
+  text-align:center;
+  font-size:10px;
+  text-transform:uppercase;
 }
 
 .field, .autocomplete-search {
   text-align:center;
 }
+
 input#movie_display_title {
   padding:15px;
   font-size:2em;
   width: 70%;
   margin:20px;
+}
+
+tbody tr.even:hover, #example tbody tr.even td.highlighted {
+  background-color: #ECFFB3;
+}
+
+tbody tr.odd:hover, #example tbody tr.odd td.highlighted {
+  background-color: #E6FF99;
+}
+
+tr.even:hover td, tr.odd:hover td {
+  background-color: #e0e0e0;
 }

@@ -1,34 +1,31 @@
-
 -#= gravatar_image_tag(@current_user[:email], :alt => "#{@current_user[:username]}")
 
 = render 'form'
 
-= page_entries_info @movies
-= paginate @movies
+%table#movies
+  %thead
+    %tr
+      %th Title
+      %th Rating
+      %th Actions
 
+  %tbody
+    - @movies.each do |movie|
+      - rating = (movie.rating / 20.0).to_f
+      - smiley = "icon-smile" if rating > 3
+      - smiley = "icon-meh" if (rating >= 2 && rating <= 3)
+      - smiley = "icon-frown" if rating < 2
 
-%table
-  %tr
-    %th.title!= sort_link_to "Title", :title
-    %th.rating!= sort_link_to "Rating", :rating
-    %th.actions Actions
-
-  - @movies.each do |movie|
-    - rating = (movie.rating / 20.0).to_f
-    - smiley = "icon-smile" if rating > 3
-    - smiley = "icon-meh" if (rating >= 2 && rating <= 3)
-    - smiley = "icon-frown" if rating < 2
-
-    %tr{ :class => cycle('even', 'odd') }
-      %td.title
-        %i.icon{ :class => smiley}
-        != movie.title
-        - if movie.year
-          %small
-            != "(#{movie.year})"
-      %td.rating
-        %span!= rating
-        %br
-          != rating_stars(rating)
-      %td.actions!= "#{link_to('Edit', edit_movie_path(movie))} | #{link_to('Destroy', movie, :method => :delete, :data => { :confirm => 'Are you sure?' })}"
-%br
+      %tr
+        %td.title
+          %i.icon{ :class => smiley}
+          != movie.title
+          - if movie.year
+            %small
+              != "(#{movie.year})"
+        %td.rating
+          %span!= rating
+          %br
+            != rating_stars(rating)
+        %td.actions
+          != "#{link_to('edit', edit_movie_path(movie))} | #{link_to('destroy', movie, :method => :delete, :data => { :confirm => 'Are you sure?' })}"

@@ -15,4 +15,6 @@
 //= require jquery-ui
 //= require jquery.ui.core
 //= require jquery.ui.widget
+//= require dataTables/jquery.dataTables
+//= require movies
 //= require autocomplete-rails
