@@ -5,7 +5,8 @@ Shinema::Application.routes.draw do
     get :autocomplete_movie_meta_title, :on => :collection
   end
 
-  resources :movie_lists
+  get 'authenticate/:token' => 'general#authenticate'
+  get 'deauthenticate' => 'general#deauthenticate'
 
   root 'movies#index'
   # The priority is based upon order of creation: first created -> highest priority.

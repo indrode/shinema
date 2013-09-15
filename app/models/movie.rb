@@ -1,7 +1,8 @@
 class Movie < ActiveRecord::Base
-
   validates_uniqueness_of :meta_id, :scope => :user_id
   validates_presence_of :title, :rating
+
+  belongs_to :user
 
   def self.import_movies!(arr)
     # arr is in format:

@@ -1,5 +1,6 @@
 class MoviesController < ApplicationController
-  before_action :set_movie, only: [:show, :edit, :update, :destroy]
+  before_filter :verify_user, :get_movie_count
+  before_filter :set_movie, only: [:show, :edit, :update, :destroy]
 
   autocomplete :movie_meta, :title, :extra_data => [:title, :year], :display_value => :autocomplete_display
 
@@ -10,22 +11,22 @@ class MoviesController < ApplicationController
     order = order ? "#{order} #{desc}, title asc" : "title"
 
     @desc = desc == "DESC" ? "ASC" : "DESC"
-    @movies = Movie.order(order)#.page(params[:page])
-    @movie = Movie.new
+    @movies = current_user.movies.order(order)#.page(params[:page])
+    @movie = current_user.movies.new
   end
 
   def show
   end
 
   def new
-    @movie = Movie.new
+    @movie = current_user.movies.new
   end
 
   def edit
   end
 
   def create
-    @movie = Movie.new(movie_params)
+    @movie = current_user.movies.new(movie_params)
 
     respond_to do |format|
       if @movie.save
@@ -58,14 +59,26 @@ class MoviesController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_movie
-      @movie = Movie.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def movie_params
-      params.require(:movie).permit(:display_title, :meta_id, :title, :year, :rating)
-    end
+  private
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_movie
+    @movie = current_user.movies.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def movie_params
+    params.require(:movie).permit(:display_title, :meta_id, :title, :year, :rating)
+  end
+
+  def verify_user
+    puts "sfasdf"
+    render :unauthorized, :text => "Unauthorized." unless current_user
+  end
+
+  def get_movie_count
+    @movie_count = current_user.movies.count
+  end
+
 end
