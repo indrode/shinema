@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130901143528) do
+ActiveRecord::Schema.define(version: 20130915103808) do
 
   create_table "movie_lists", force: true do |t|
     t.string   "title"
@@ -44,5 +44,14 @@ ActiveRecord::Schema.define(version: 20130901143528) do
   add_index "movies", ["meta_id"], name: "index_movies_on_meta_id", using: :btree
   add_index "movies", ["tomato_id"], name: "index_movies_on_tomato_id", using: :btree
   add_index "movies", ["user_id"], name: "index_movies_on_user_id", using: :btree
+
+  create_table "users", force: true do |t|
+    t.string   "email"
+    t.string   "encrypted_token"
+    t.string   "token_salt"
+    t.integer  "authentications"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
