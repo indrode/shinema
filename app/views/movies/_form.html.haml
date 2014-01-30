@@ -8,7 +8,7 @@
             %li= msg
 
     .autocomplete-search
-      = f.autocomplete_field :display_title, autocomplete_movie_meta_title_movies_path, :update_elements => {:id => '#movie_meta_id', :title => "#movie_title", :year => '#movie_year'}, :placeholder => "search and add a movie..."
+      = f.autocomplete_field :display_title, autocomplete_movie_meta_title_movies_path, :update_elements => {:id => '#movie_meta_id', :title => "#movie_title", :year => '#movie_year', :rotten_id => '#tomato_id'}, :placeholder => "search and add a movie..."
 
     .field
       = f.hidden_field :meta_id
