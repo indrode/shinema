@@ -40,6 +40,10 @@ group :test, :development do
   gem 'haml-rails'
 end
 
+group :development do
+  gem 'rubocop'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
