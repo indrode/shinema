@@ -31,7 +31,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'kotae', :git => "https://github.com/indrode/kotae.git", :ref => "shinema"
+# use private remote version
+gem 'kotae', git: 'spacecake-git:/home/git/kotae.git', ref: 'shinema'
 
 group :test, :development do
   gem 'capybara'

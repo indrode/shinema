@@ -13,7 +13,7 @@ GIT
       rails (>= 3.0)
 
 GIT
-  remote: https://github.com/indrode/kotae.git
+  remote: spacecake-git:/home/git/kotae.git
   revision: 739db65b320a50c6d9afc083ceecf03e28a20047
   ref: shinema
   specs:
