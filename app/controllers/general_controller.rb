@@ -1,15 +1,14 @@
 class GeneralController < ApplicationController
-  before_action :authenticate_user, :except => :deauthenticate
+  before_action :authenticate_user, except: :deauthenticate
 
   def authenticate
-    render :text => "Your token was authenticated correctly. Refresh this page to proceed."
+    render text: 'Your token was authenticated correctly. Refresh to proceed.'
   end
 
   def deauthenticate
     session[:shinema_user_token] = nil
-    render :text => "De-authenticated."
+    render text: 'De-authenticated.'
   end
-
 
   private
 
@@ -20,9 +19,7 @@ class GeneralController < ApplicationController
     if token && encrypted_token = EncryptionService.decrypt(token)
       session[:shinema_user_token] = encrypted_token
     else
-      render :unauthorized, :text => "Authentication failed."
+      render :unauthorized, text: 'Authentication failed.'
     end
-
   end
-
 end
