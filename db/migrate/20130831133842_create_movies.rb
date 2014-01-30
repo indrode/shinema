@@ -9,7 +9,7 @@ class CreateMovies < ActiveRecord::Migration
       t.integer :rating
       t.integer :year
 
-      t.timestamp
+      t.timestamps
     end
 
     execute("ALTER TABLE movies AUTO_INCREMENT = 30000")
